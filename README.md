@@ -7,6 +7,7 @@ Terraform-rendered, GitHub-infused website.
 
 | Name | Description | Type | Required |
 |------|-------------|------|:--------:|
+| github_token | This is the GitHub token. | `string` | yes |
 | fontawesome_identifier | Font Awesome Kit Identifier. | `string` | no |
 | github_owner | This is the target GitHub organization or individual user account to manage. | `string` | no |
 
