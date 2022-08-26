@@ -28,7 +28,7 @@
     <h2><i class="fa-brands fa-github"></i> Repositories</h2>
 
     <div class="row">
-      %{ for repository in repositories ~}
+      %{~ for repository in repositories ~}
       <div class="col-12 card">
         <header>
           <h4><a href="${repository.html_url}"><samp class="text-primary">${repository.full_name}</samp></a></h4>
@@ -44,47 +44,47 @@
           <div class="row">
             <div class="col">
               <i class="clear fa-thin fa-tags"></i>
-              %{ for topic in repository.topics ~}
+              %{~ for topic in repository.topics ~}
               <a href="https://github.com/search?q=topic%3A${topic}+org%3A${orgname}" class="bg-${topic} topic">
-                %{ if topic == "aws" ~}
+                %{~ if topic == "aws" ~}
                 <i class="fa-brands fa-aws"></i> AWS
-                %{ endif }%{ if topic == "boundary" ~}
+                %{~ endif ~}%{~ if topic == "boundary" ~}
                 <i class="fak fa-hashicorp-boundary"></i> Boundary
-                %{ endif }%{ if topic == "consul" ~}
+                %{~ endif ~}%{~ if topic == "consul" ~}
                 <i class="fak fa-hashicorp-consul"></i> Consul
-                %{ endif }%{ if topic == "datadog" ~}
+                %{~ endif ~}%{~ if topic == "datadog" ~}
                 <i class="fak fa-hashicorp-datadog"></i> Datadog
-                %{ endif }%{ if topic == "github" ~}
+                %{~ endif ~}%{~ if topic == "github" ~}
                 <i class="fa-brands fa-github"></i> GitHub
-                %{ endif }%{ if topic == "html5" ~}
+                %{~ endif ~}%{~ if topic == "html5" ~}
                 <i class="fa-brands fa-html5"></i> HTML
-                %{ endif }%{ if topic == "nomad" ~}
+                %{~ endif ~}%{~ if topic == "nomad" ~}
                 <i class="fak fa-hashicorp-nomad"></i> Nomad
-                %{ endif }%{ if topic == "packer" ~}
+                %{~ endif ~}%{~ if topic == "packer" ~}
                 <i class="fak fa-hashicorp-packer"></i> Packer
-                %{ endif }%{ if topic == "terraform" ~}
+                %{~ endif ~}%{~ if topic == "terraform" ~}
                 <i class="fak fa-hashicorp-terraform"></i> Terraform
-                %{ endif }%{ if topic == "vagrant" ~}
+                %{~ endif ~}%{~ if topic == "vagrant" ~}
                 <i class="fak fa-hashicorp-vagrant"></i> Vagrant
-                %{ endif }%{ if topic == "vault" ~}
+                %{~ endif ~}%{~ if topic == "vault" ~}
                 <i class="fak fa-hashicorp-vault"></i> Vault
-                %{ endif }%{ if topic == "waypoint" ~}
+                %{~ endif ~}%{~ if topic == "waypoint" ~}
                 <i class="fak fa-hashicorp-waypoint"></i> Waypoint
-                %{ endif }
+                %{~ endif ~}
               </a>&nbsp;
-              %{ endfor }
+              %{~ endfor ~}
             </div>
 
             <div class="col text-right">
               <a href="${repository.html_url}" class="button icon-only dark outline"><i class="fa-solid fa-code"></i> Code</a>
-              %{ if repository.has_issues ~}
+              %{~ if repository.has_issues ~}
               <a href="${repository.html_url}/issues" class="button icon-only dark outline"><i class="fa-solid fa-bug"></i> Issues</a>
-              %{ endif }
+              %{~ endif ~}
             </div>
           </div>
         </footer>
       </div>
-      %{ endfor ~}
+      %{~ endfor ~}
     </div>
   </section>
 </div>

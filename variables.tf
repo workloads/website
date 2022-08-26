@@ -4,6 +4,12 @@ variable "github_owner" {
   default     = "workloads"
 }
 
+variable "github_token" {
+  type        = string
+  description = "This is the GitHub token."
+  sensitive   = true
+}
+
 variable "fontawesome_identifier" {
   type        = string
   description = "Font Awesome Kit Identifier."

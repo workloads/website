@@ -29,9 +29,14 @@ body > footer {
   padding: 4rem;
 }
 
+a.button.dark:hover {
+  background-color: var(--color-primary);
+  color: #24292f;
+}
+
 .bg-aws {
   background-color: #f90;
-  color: #f5f5f5;
+  color: #24292f;
 }
 
 .bg-boundary {
@@ -61,12 +66,12 @@ body > footer {
 
 .bg-nomad {
   background-color: #60dea9;
-  color: #262626;
+  color: #24292f;
 }
 
 .bg-packer {
   background-color: #63d0ff;
-  color: #262626;
+  color: #24292f;
 }
 
 .bg-terraform {
@@ -81,12 +86,16 @@ body > footer {
 
 .bg-vault {
   background-color: #ffec6e;
-  color: #262626;
+  color: #24292f;
 }
 
 .bg-waypoint {
   background-color: #62d4dc;
-  color: #262626;
+  color: #24292f;
+}
+
+.fa-github:hover {
+  color: #f00;
 }
 
 .fa-heart {
