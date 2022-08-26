@@ -12,13 +12,13 @@ terraform {
     # see https://registry.terraform.io/providers/integrations/github/4.29.0/
     github = {
       source  = "integrations/github"
-      version = "4.29.0"
+      version = ">= 4.29.0, < 5.0.0"
     }
 
     # see https://registry.terraform.io/providers/hashicorp/local/2.2.3
     local = {
       source  = "hashicorp/local"
-      version = "2.2.3"
+      version = ">= 2.2.3, < 3.0.0"
     }
   }
 
