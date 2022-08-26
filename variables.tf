@@ -1,12 +1,7 @@
 variable "github_owner" {
   type        = string
   description = "This is the target GitHub organization or individual user account to manage."
-}
-
-variable "github_token" {
-  type        = string
-  description = "A GitHub OAuth / Personal Access Token."
-  sensitive   = true
+  default     = "workloads"
 }
 
 variable "fontawesome_identifier" {
