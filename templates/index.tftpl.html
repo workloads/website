@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>${name} &mdash; ${description}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/chota@0.8.0/dist/chota.min.css">
+  <link rel="stylesheet" href="./website.css">
+  <link rel="icon" type="image/png" href="./favicon.png" />
+
+  <meta property="og:type" content="website" />
+  <!-- TODO: add additional OG tags -->
+
+  <script src="https://kit.fontawesome.com/${fontawesome_identifier}.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="top">
+<div class="container">
+  <div class="hero is-full-screen">
+    <div class="logo is-center is-vertical-align">
+      <img src="./logo.svg" alt="${name} &mdash; ${description}" title="${name} &mdash; ${description}">
+      <h3>${name} &mdash; ${description}</h3>
+    </div>
+  </div>
+
+  <section id="repositories">
+    <h2><i class="fa-brands fa-github"></i> Repositories</h2>
+
+    <div class="row">
+      %{ for repository in repositories ~}
+      <div class="col-12 card">
+        <header>
+          <h4><a href="${repository.html_url}"><samp class="text-primary">${repository.full_name}</samp></a></h4>
+        </header>
+
+        <div class="row">
+          <div class="col">
+            <p>${repository.description}</p>
+          </div>
+        </div>
+
+        <footer>
+          <div class="row">
+            <div class="col">
+              <i class="clear fa-thin fa-tags"></i>
+              %{ for topic in repository.topics ~}
+              <a href="https://github.com/search?q=topic%3A${topic}+org%3A${orgname}" class="bg-${topic} topic">
+                %{ if topic == "aws" ~}
+                <i class="fa-brands fa-aws"></i> AWS
+                %{ endif }%{ if topic == "boundary" ~}
+                <i class="fak fa-hashicorp-boundary"></i> Boundary
+                %{ endif }%{ if topic == "consul" ~}
+                <i class="fak fa-hashicorp-consul"></i> Consul
+                %{ endif }%{ if topic == "datadog" ~}
+                <i class="fak fa-hashicorp-datadog"></i> Datadog
+                %{ endif }%{ if topic == "github" ~}
+                <i class="fa-brands fa-github"></i> GitHub
+                %{ endif }%{ if topic == "html5" ~}
+                <i class="fa-brands fa-html5"></i> HTML
+                %{ endif }%{ if topic == "nomad" ~}
+                <i class="fak fa-hashicorp-nomad"></i> Nomad
+                %{ endif }%{ if topic == "packer" ~}
+                <i class="fak fa-hashicorp-packer"></i> Packer
+                %{ endif }%{ if topic == "terraform" ~}
+                <i class="fak fa-hashicorp-terraform"></i> Terraform
+                %{ endif }%{ if topic == "vagrant" ~}
+                <i class="fak fa-hashicorp-vagrant"></i> Vagrant
+                %{ endif }%{ if topic == "vault" ~}
+                <i class="fak fa-hashicorp-vault"></i> Vault
+                %{ endif }%{ if topic == "waypoint" ~}
+                <i class="fak fa-hashicorp-waypoint"></i> Waypoint
+                %{ endif }
+              </a>&nbsp;
+              %{ endfor }
+            </div>
+
+            <div class="col text-right">
+              <a href="${repository.html_url}" class="button icon-only dark outline"><i class="fa-solid fa-code"></i> Code</a>
+              %{ if repository.has_issues ~}
+              <a href="${repository.html_url}/issues" class="button icon-only dark outline"><i class="fa-solid fa-bug"></i> Issues</a>
+              %{ endif }
+            </div>
+          </div>
+        </footer>
+      </div>
+      %{ endfor ~}
+    </div>
+  </section>
+</div>
+
+<footer class="bg-dark text-center">
+  <div class="row">
+    <div class="col"><a href="#top" class="text-white"><i class="fa-solid fa-arrow-up"></i> up</a></div>
+    <div class="col text-light">crafted with <i class="fa-solid fa-heart"></i>️ by <a href="https://github.com/orgs/${orgname}/people" class="text-white"><strong>these folks</strong></a></div>
+  </div>
+</footer>
+
+</body>
+</html>
