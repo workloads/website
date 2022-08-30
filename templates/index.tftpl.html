@@ -1,16 +1,27 @@
 <!doctype html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
+  <link rel="stylesheet" href="https://unpkg.com/chota@0.8.0/dist/chota.min.css">
+  <link rel="stylesheet" href="assets/website.css">
+  <link rel="icon" href="/assets/favicon.ico" /><!-- 32×32 -->
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" /><!-- 180×180 -->
+  <link rel="manifest" href="/assets/manifest.webmanifest" />
+
+  <title>${name} &mdash; ${description}</title>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <title>${name} &mdash; ${description}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/chota@0.8.0/dist/chota.min.css">
-  <link rel="stylesheet" href="./website.css">
-  <link rel="icon" type="image/png" href="./favicon.png" />
+  <meta name="theme-color" content="#60DEA9" />
 
+  <meta name="twitter:creator" content="@wrklds" />
+  <meta name="twitter:description" content="${description}" />
+  <meta name="twitter:domain" content="${name}" />
+  <!-- <meta name="twitter:image" content="TODO" /> -->
+  <meta name="twitter:site" content="@wrklds" />
+  <meta name="twitter:title" content="${name}" />
   <meta property="og:type" content="website" />
-  <!-- TODO: add additional OG tags -->
 
   <script src="https://kit.fontawesome.com/${fontawesome_identifier}.js" crossorigin="anonymous"></script>
 </head>
@@ -57,9 +68,14 @@
                 %{~ endif ~}%{~ if topic == "github" ~}
                 <i class="fa-brands fa-github"></i> GitHub
                 %{~ endif ~}%{~ if topic == "html5" ~}
+                %{~ endif ~}%{~ if topic == "gandi" ~}
+                <i class="fa-brands gandi"></i> Gandi
+                %{~ endif ~}%{~ if topic == "html" ~}
                 <i class="fa-brands fa-html5"></i> HTML
                 %{~ endif ~}%{~ if topic == "nomad" ~}
                 <i class="fak fa-nomad"></i> Nomad
+                %{~ endif ~}%{~ if topic == "okta" ~}
+                <i class="fa-brands okta"></i> Okta
                 %{~ endif ~}%{~ if topic == "packer" ~}
                 <i class="fak fa-packer"></i> Packer
                 %{~ endif ~}%{~ if topic == "terraform" ~}
