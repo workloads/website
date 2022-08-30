@@ -1,6 +1,6 @@
 # Terraform Cloud Workspace: `website`
 
-Terraform-rendered, GitHub-infused website.
+> This directory manages the lifecycle of the website configuration for [@workloads](https://github.com/workloads).
 
 <!-- BEGIN_TF_DOCS -->
 ### Inputs

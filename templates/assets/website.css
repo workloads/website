@@ -59,6 +59,11 @@ a.button.dark:hover {
   color: #f5f5f5;
 }
 
+.bg-gandi {
+  background-color: #00297a;
+  color: #f5f5f5;
+}
+
 .bg-github {
   background-color: #24292f;
   color: #f5f5f5;
@@ -72,6 +77,11 @@ a.button.dark:hover {
 .bg-nomad {
   background-color: #60dea9;
   color: #24292f;
+}
+
+.bg-okta {
+  background-color: #00297a;
+  color: #f5f5f5;
 }
 
 .bg-packer {
