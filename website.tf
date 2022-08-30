@@ -7,6 +7,8 @@ resource "local_file" "website" {
     orgname                = data.github_organization.main.orgname
     description            = data.github_organization.main.description
     repositories           = data.github_repository.main,
+    theme_color            = var.theme_color,
+    twitter_user           = var.twitter_user,
   })
 
   filename = "${path.module}/templates/index.html"

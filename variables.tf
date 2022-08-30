@@ -15,3 +15,15 @@ variable "fontawesome_identifier" {
   description = "Font Awesome Kit Identifier."
   default     = "f8764d0198"
 }
+
+variable "theme_color" {
+  type        = string
+  description = "Theme color for website."
+  default     = "#60DEA9"
+}
+
+variable "twitter_user" {
+  type        = string
+  description = "Twitter Username."
+  default     = "@wrklds"
+}
