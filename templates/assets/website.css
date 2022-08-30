@@ -69,6 +69,11 @@ a.button.dark:hover {
   color: #f5f5f5;
 }
 
+.bg-hcp {
+  background-color: #000000;
+  color: #f5f5f5;
+}
+
 .bg-html5 {
   background-color: #e44d26;
   color: #f5f5f5;
