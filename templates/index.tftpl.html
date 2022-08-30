@@ -42,7 +42,7 @@
       %{~ for repository in repositories ~}
       <div class="col-12 card">
         <header>
-          <h4><a href="${repository.html_url}"><samp class="text-primary">${repository.full_name}</samp></a></h4>
+          <h4><a href="${repository.html_url}"><i class="fa-solid fa-code"></i> <samp class="text-primary">${repository.full_name}</samp></a></h4>
         </header>
 
         <div class="row">
@@ -68,10 +68,10 @@
                 %{~ endif ~}%{~ if topic == "github" ~}
                 <i class="fa-brands fa-github"></i> GitHub
                 %{~ endif ~}%{~ if topic == "gandi" ~}
-                <i class="fa-brands gandi"></i> Gandi
+                <i class="fak fa-gandi"></i> Gandi
                 %{~ endif ~}%{~ if topic == "hcp" ~}
-                <i class="fa-brands hcp"></i> HashiCorp Cloud Platform
-                %{~ endif ~}%{~ if topic == "html" ~}
+                <i class="fak fa-hcp"></i> HCP
+                %{~ endif ~}%{~ if topic == "html5" ~}
                 <i class="fa-brands fa-html5"></i> HTML
                 %{~ endif ~}%{~ if topic == "nomad" ~}
                 <i class="fak fa-nomad"></i> Nomad
@@ -90,13 +90,6 @@
                 %{~ endif ~}
               </a>&nbsp;
               %{~ endfor ~}
-            </div>
-
-            <div class="col text-right">
-              <a href="${repository.html_url}" class="button icon-only dark outline"><i class="fa-solid fa-code"></i> Code</a>
-              %{~ if repository.has_issues ~}
-              <a href="${repository.html_url}/issues" class="button icon-only dark outline"><i class="fa-solid fa-bug"></i> Issues</a>
-              %{~ endif ~}
             </div>
           </div>
         </footer>
