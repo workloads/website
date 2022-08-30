@@ -42,7 +42,7 @@
       %{~ for repository in repositories ~}
       <div class="col-12 card">
         <header>
-          <h4><a href="${repository.html_url}"><i class="fa-solid fa-code"></i> <samp class="text-primary">${repository.full_name}</samp></a></h4>
+          <h4><samp class="text-primary">${repository.full_name}</samp></a></h4>
         </header>
 
         <div class="row">
@@ -54,7 +54,7 @@
         <footer>
           <div class="row">
             <div class="col">
-              <i class="clear fa-thin fa-tags"></i>
+              <i class="clear fa-thin fa-tags"></i>&nbsp;
               %{~ for topic in repository.topics ~}
               <a href="https://github.com/search?q=topic%3A${topic}+org%3A${orgname}" class="bg-${topic} topic">
                 %{~ if topic == "aws" ~}
