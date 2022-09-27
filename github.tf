@@ -14,7 +14,7 @@ data "github_repositories" "public" {
 # iterate over all repositories and retrieve data
 # see https://registry.terraform.io/providers/integrations/github/latest/docs/data-sources/repository
 data "github_repository" "main" {
-  # see https://www.terraform.io/docs/language/meta-arguments/for_each.html
+  # see https://developer.hashicorp.com/terraform/language/meta-arguments/for_each
   for_each = toset(data.github_repositories.public.full_names)
 
   full_name = each.key

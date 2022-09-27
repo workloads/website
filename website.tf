@@ -1,6 +1,6 @@
 # see https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file
 resource "local_file" "website" {
-  # see https://www.terraform.io/language/functions/templatefile
+  # see https://developer.hashicorp.com/terraform/language/functions/templatefile
   content = templatefile("./templates/index.tftpl.html", {
     fontawesome_identifier = var.fontawesome_identifier
     name                   = data.github_organization.main.name
