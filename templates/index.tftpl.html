@@ -27,11 +27,19 @@
 </head>
 
 <body id="top">
+<nav class="nav">
+  <div class="nav-right">
+    <a href="https://twitter.com/${twitter_user}"><i class="fa-brands fa-twitter"></i></a>
+    <a href="https://github.com/${orgname}"><i class="fa-brands fa-github"></i></a>
+  </div>
+</nav>
+
 <div class="container">
   <div class="hero is-full-screen">
     <div class="logo is-center is-vertical-align">
-      <img src="./logo.svg" alt="${name} &mdash; ${description}" title="${name} &mdash; ${description}">
-      <h3>${name} &mdash; ${description}</h3>
+      <h1>${name}</h1>
+      <!-- <img src="./logo.svg" alt="${name} &mdash; ${description}" title="${name} &mdash; ${description}"> -->
+      <h3>${description}</h3>
     </div>
   </div>
 
@@ -42,7 +50,7 @@
       %{~ for repository in repositories ~}
       <div class="col-12 card">
         <header>
-          <h4><samp class="text-primary">${repository.full_name}</samp></a></h4>
+          <h4><a href="${repository.html_url}"><samp class="text-primary">${repository.full_name}</samp></a></h4>
         </header>
 
         <div class="row">
@@ -57,14 +65,20 @@
               <i class="clear fa-thin fa-tags"></i>&nbsp;
               %{~ for topic in repository.topics ~}
               <a href="https://github.com/search?q=topic%3A${topic}+org%3A${orgname}" class="bg-${topic} topic">
-                %{~ if topic == "aws" ~}
+                %{~ if topic == "1password-cli" ~}
+                <i class="fak fa-1password"></i> 1Password CLI
+                %{~ endif ~}%{~ if topic == "aws" ~}
                 <i class="fa-brands fa-aws"></i> AWS
+                %{~ endif ~}%{~ if topic == "azure" ~}
+                <i class="fa-brands fa-microsoft"></i> Microsoft Azure
                 %{~ endif ~}%{~ if topic == "boundary" ~}
                 <i class="fak fa-boundary"></i> Boundary
                 %{~ endif ~}%{~ if topic == "consul" ~}
                 <i class="fak fa-consul"></i> Consul
                 %{~ endif ~}%{~ if topic == "datadog" ~}
                 <i class="fak fa-datadog"></i> Datadog
+                %{~ endif ~}%{~ if topic == "digital-ocean" ~}
+                <i class="fak fa-digital-ocean"></i> Digital Ocean
                 %{~ endif ~}%{~ if topic == "github" ~}
                 <i class="fa-brands fa-github"></i> GitHub
                 %{~ endif ~}%{~ if topic == "gandi" ~}
@@ -81,6 +95,8 @@
                 <i class="fa-brands okta"></i> Okta
                 %{~ endif ~}%{~ if topic == "packer" ~}
                 <i class="fak fa-packer"></i> Packer
+                %{~ endif ~}%{~ if topic == "scaleway" ~}
+                <i class="fak fa-scaleway"></i> Scaleway
                 %{~ endif ~}%{~ if topic == "terraform" ~}
                 <i class="fak fa-terraform"></i> Terraform
                 %{~ endif ~}%{~ if topic == "vagrant" ~}
