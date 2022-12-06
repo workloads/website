@@ -1,3 +1,6 @@
+# This is a Terraform-managed file; manual changes will be overwritten.
+# see https://github.com/workloads/github-organization/blob/main/templates/workflows/superlinter.yml
+
 ---
 name: "Code Quality: Super-Linter"
 
@@ -10,12 +13,15 @@ jobs:
     name: Super-Linter
     runs-on: ubuntu-latest
     steps:
+
+      # see https://github.com/actions/checkout
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
 
+      # see https://github.com/github/super-linter
       - name: Lint Code with Super-Linter
         uses: github/super-linter/slim@v4
         env:
