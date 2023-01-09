@@ -18,7 +18,7 @@ variable "fontawesome_identifier" {
 
 variable "theme_color" {
   type        = string
-  description = "Theme color for website."
+  description = "Theme color for Website."
   default     = "#60DEA9"
 }
 
