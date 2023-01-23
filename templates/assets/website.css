@@ -21,6 +21,7 @@
   --bgcolor-packer: #63d0ff;
   --bgcolor-scaleway: #4f0599;
   --bgcolor-terraform: #844fba;
+  --bgcolor-turingpi: #404040;
   --bgcolor-vagrant: #2e71e5;
   --bgcolor-vault: #ffec6e;
 }
@@ -149,6 +150,11 @@ a.button.dark:hover {
 
 .bg-terraform {
   background-color: var(--bgcolor-terraform);
+  color: var(--color-tag-light);
+}
+
+.bg-turingpi {
+  background-color: var(--bgcolor-turingpi);
   color: var(--color-tag-light);
 }
 
