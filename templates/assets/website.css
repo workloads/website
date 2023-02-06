@@ -24,6 +24,8 @@
   --bgcolor-turingpi: #404040;
   --bgcolor-vagrant: #2e71e5;
   --bgcolor-vault: #ffec6e;
+  --bgcolor-waypoint: #62d4dc;
+}
 }
 
 body > .container {
