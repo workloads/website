@@ -1,3 +1,15 @@
+variable "domains" {
+  type = map(string)
+
+  description = "Project-specific (public) Domains."
+
+  default = {
+    primary = "workloads.io"
+    podcast = "workloads.fm"
+    #showcase = "svcs.dev"
+  }
+}
+
 variable "github_owner" {
   type        = string
   description = "This is the target GitHub organization or individual user account to manage."

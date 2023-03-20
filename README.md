@@ -17,6 +17,7 @@
 | Name | Description | Type | Required |
 |------|-------------|------|:--------:|
 | github_token | This is the GitHub token. | `string` | yes |
+| domains | Project-specific (public) Domains. | `map(string)` | no |
 | fontawesome_identifier | Font Awesome Kit Identifier. | `string` | no |
 | github_owner | This is the target GitHub organization or individual user account to manage. | `string` | no |
 | theme_color | Theme color for Website. | `string` | no |
@@ -26,8 +27,10 @@
 
 | Name | Description |
 |------|-------------|
+| aws_route53_zone | Exported Attributes for `aws_route53_zone` data-source. |
 | github_repositories | Exported Attributes for `github_repositories` data-source. |
 | github_repository | Exported Attributes for `github_repository` data-source. |
+| primary_website_files | n/a |
 <!-- END_TF_DOCS -->
 
 ## Author Information
