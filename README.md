@@ -1,14 +1,16 @@
-# Terraform Cloud Workspace: `website`
+# Terraform Cloud Workspace `website`
 
 > This directory manages the lifecycle of the website configuration for [@workloads](https://github.com/workloads).
 
 ## Table of Contents
 
 <!-- TOC -->
-* [Terraform Cloud Workspace: `website`](#terraform-cloud-workspace--website)
+* [Terraform Cloud Workspace `website`](#terraform-cloud-workspace-website)
   * [Table of Contents](#table-of-contents)
     * [Inputs](#inputs)
     * [Outputs](#outputs)
+  * [Author Information](#author-information)
+  * [License](#license)
 <!-- TOC -->
 
 <!-- BEGIN_TF_DOCS -->
