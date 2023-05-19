@@ -37,7 +37,7 @@
 
 ## Author Information
 
-This module is maintained by the contributors listed on [GitHub](https://github.com/workloads/website/graphs/contributors).
+This repository is maintained by the contributors listed on [GitHub](https://github.com/workloads/website/graphs/contributors).
 
 ## License
 
