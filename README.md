@@ -1,6 +1,6 @@
 # Terraform Cloud Workspace `website`
 
-> This directory manages the lifecycle of the website configuration for [@workloads](https://github.com/workloads).
+> This directory manages Website Configuration for [@workloads](https://github.com/workloads).
 
 ## Table of Contents
 
