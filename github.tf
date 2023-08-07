@@ -5,12 +5,12 @@ data "github_organization" "main" {
 }
 
 locals {
-   github_owner_data = {
-     description = data.github_organization.main.description
-     name        = data.github_organization.main.name
-     query       = "org:${data.github_organization.main.orgname}"
-     username    = data.github_organization.main.orgname
-   }
+  github_owner_data = {
+    description = data.github_organization.main.description
+    name        = data.github_organization.main.name
+    query       = "org:${data.github_organization.main.orgname}"
+    username    = data.github_organization.main.orgname
+  }
 
   # change "is:public" to "is:private" if you intend to showcase private projects
   # change "archived:false" to "archived:true" if you intend to showcase archived projects
