@@ -18,21 +18,24 @@
 
 | Name | Description | Type | Required |
 |------|-------------|------|:--------:|
-| github_token | This is the GitHub token. | `string` | yes |
-| domains | Project-specific (public) Domains. | `map(string)` | no |
+| github_token | This is the GitHub Token. | `string` | yes |
+| management_region_aws | AWS-specific `Management` Region Identifier. | `string` | yes |
+| domain | Website Domain. | `string` | no |
 | fontawesome_identifier | Font Awesome Kit Identifier. | `string` | no |
-| github_owner | This is the target GitHub organization or individual user account to manage. | `string` | no |
-| theme_color | Theme color for Website. | `string` | no |
-| twitter_user | Twitter Username. | `string` | no |
+| github_owner | This is the target GitHub Organization. | `string` | no |
+| subdomain | Website Subdomain. | `string` | no |
+| website | Object of Website Configuration Data. | <pre>object({<br>    theme_color  = string<br>    twitter_user = string<br>  })</pre> | no |
 
 ### Outputs
 
 | Name | Description |
 |------|-------------|
-| aws_route53_zone | Exported Attributes for `aws_route53_zone` data-source. |
-| github_repositories | Exported Attributes for `github_repositories` data-source. |
-| github_repository | Exported Attributes for `github_repository` data-source. |
-| primary_website_files | n/a |
+| aws_cli_commands | AWS CLI Command for CloudFront operations. |
+| aws_cloudfront_aliases | Exported Attributes for `module.website.aws_cloudfront_distribution.aliases`. |
+| aws_cloudfront_domain_name | Exported Attribute for `module.website.aws_cloudfront_distribution.domain_name`. |
+| aws_console_urls | AWS Console URLs. |
+| aws_s3_bucket | Exported Attribute for `module.website.aws_s3_bucket`. |
+| github_repositories_list | Exported List of Repositories of the `github_repositories.main` Data Source. |
 <!-- END_TF_DOCS -->
 
 ## Author Information
