@@ -7,11 +7,27 @@
 <!-- TOC -->
 * [Terraform Cloud Workspace `website`](#terraform-cloud-workspace-website)
   * [Table of Contents](#table-of-contents)
+  * [Requirements](#requirements)
+  * [Usage](#usage)
     * [Inputs](#inputs)
     * [Outputs](#outputs)
   * [Author Information](#author-information)
   * [License](#license)
 <!-- TOC -->
+
+## Requirements
+
+- HashiCorp Terraform `1.5.x` or [newer](https://developer.hashicorp.com/packer/downloads)
+
+Optional, and only needed for documentation generation:
+
+- `terraform-docs` `0.16.0` or [newer](https://terraform-docs.io/user-guide/installation/)
+
+## Usage
+
+This repository uses a standard Terraform workflow (`init`, `plan`, `apply`).
+
+For more information, including detailed usage guidelines, see the [Terraform documentation](https://developer.hashicorp.com/terraform/cli/commands).
 
 <!-- BEGIN_TF_DOCS -->
 ### Inputs
