@@ -14,16 +14,16 @@ terraform {
 
   # see https://developer.hashicorp.com/terraform/language/settings#specifying-provider-requirements
   required_providers {
-    # see https://registry.terraform.io/providers/hashicorp/aws/5.16.1
+    # see https://registry.terraform.io/providers/hashicorp/aws/5.19.0
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 5.16.1, < 6.0.0"
+      version = ">= 5.19.0, < 6.0.0"
     }
 
-    # see https://registry.terraform.io/providers/integrations/github/5.33.0
+    # see https://registry.terraform.io/providers/integrations/github/5.39.0
     github = {
       source  = "integrations/github"
-      version = ">= 5.33.0, < 6.0.0"
+      version = ">= 5.39.0, < 6.0.0"
     }
 
     # see https://registry.terraform.io/providers/hashicorp/local/2.4.0
