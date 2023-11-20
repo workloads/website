@@ -8,9 +8,8 @@ locals {
 
 # see https://registry.terraform.io/modules/ksatirli/cloudfront-website/aws/1.0.0
 module "website" {
-  source = "../../ksatirli/terraform-aws-cloudfront-website"
-  #source  = "ksatirli/cloudfront-website/aws"
-  #version = "1.2.0"
+  source  = "ksatirli/cloudfront-website/aws"
+  version = "1.2.0"
 
   # see https://developer.hashicorp.com/terraform/language/providers/configuration#alias-multiple-provider-configurations
   providers = {
