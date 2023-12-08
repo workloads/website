@@ -1,38 +1,62 @@
-# Terraform Cloud Workspace: `website`
+# Terraform Cloud Workspace `website`
 
-> This directory manages the lifecycle of the website configuration for [@workloads](https://github.com/workloads).
+> This directory manages Website Configuration for [@workloads](https://github.com/workloads).
 
 ## Table of Contents
 
 <!-- TOC -->
-* [Terraform Cloud Workspace: `website`](#terraform-cloud-workspace--website)
+* [Terraform Cloud Workspace `website`](#terraform-cloud-workspace-website)
   * [Table of Contents](#table-of-contents)
+  * [Requirements](#requirements)
+  * [Usage](#usage)
     * [Inputs](#inputs)
     * [Outputs](#outputs)
+  * [Author Information](#author-information)
+  * [License](#license)
 <!-- TOC -->
+
+## Requirements
+
+- HashiCorp Terraform `1.5.x` or [newer](https://developer.hashicorp.com/packer/downloads)
+
+Optional, and only needed for documentation generation:
+
+- `terraform-docs` `0.16.0` or [newer](https://terraform-docs.io/user-guide/installation/)
+
+## Usage
+
+This repository uses a standard Terraform workflow (`init`, `plan`, `apply`).
+
+For more information, including detailed usage guidelines, see the [Terraform documentation](https://developer.hashicorp.com/terraform/cli/commands).
 
 <!-- BEGIN_TF_DOCS -->
 ### Inputs
 
 | Name | Description | Type | Required |
 |------|-------------|------|:--------:|
-| github_token | This is the GitHub token. | `string` | yes |
+| github_token | This is the GitHub Token. | `string` | yes |
+| management_region_aws | AWS-specific `Management` Region Identifier. | `string` | yes |
+| domain | Website Domain. | `string` | no |
 | fontawesome_identifier | Font Awesome Kit Identifier. | `string` | no |
-| github_owner | This is the target GitHub organization or individual user account to manage. | `string` | no |
-| theme_color | Theme color for Website. | `string` | no |
-| twitter_user | Twitter Username. | `string` | no |
+| github_owner | This is the target GitHub Organization. | `string` | no |
+| subdomain | Website Subdomain. | `string` | no |
+| website | Object of Website Configuration Data. | <pre>object({<br>    theme_color  = string<br>    twitter_user = string<br>  })</pre> | no |
 
 ### Outputs
 
 | Name | Description |
 |------|-------------|
-| github_repositories | Exported Attributes for `github_repositories` data-source. |
-| github_repository | Exported Attributes for `github_repository` data-source. |
+| aws_cli_commands | AWS CLI Command for CloudFront operations. |
+| aws_cloudfront_aliases | Exported Attributes for `module.website.aws_cloudfront_distribution.aliases`. |
+| aws_cloudfront_domain_name | Exported Attribute for `module.website.aws_cloudfront_distribution.domain_name`. |
+| aws_console_urls | AWS Console URLs. |
+| aws_s3_bucket | Exported Attribute for `module.website.aws_s3_bucket`. |
+| github_repositories_list | Exported List of Repositories of the `github_repositories.main` Data Source. |
 <!-- END_TF_DOCS -->
 
 ## Author Information
 
-This module is maintained by the contributors listed on [GitHub](https://github.com/workloads/website/graphs/contributors).
+This repository is maintained by the contributors listed on [GitHub](https://github.com/workloads/website/graphs/contributors).
 
 ## License
 

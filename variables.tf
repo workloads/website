@@ -1,12 +1,18 @@
+variable "domain" {
+  type        = string
+  description = "Website Domain."
+  default     = "workloads.io"
+}
+
 variable "github_owner" {
   type        = string
-  description = "This is the target GitHub organization or individual user account to manage."
+  description = "This is the target GitHub Organization."
   default     = "workloads"
 }
 
 variable "github_token" {
   type        = string
-  description = "This is the GitHub token."
+  description = "This is the GitHub Token."
   sensitive   = true
 }
 
@@ -16,14 +22,26 @@ variable "fontawesome_identifier" {
   default     = "f8764d0198"
 }
 
-variable "theme_color" {
+variable "management_region_aws" {
   type        = string
-  description = "Theme color for Website."
-  default     = "#60DEA9"
+  description = "AWS-specific `Management` Region Identifier."
 }
 
-variable "twitter_user" {
+variable "subdomain" {
   type        = string
-  description = "Twitter Username."
-  default     = "@wrklds"
+  description = "Website Subdomain."
+  default     = "www"
+}
+
+variable "website" {
+  type = object({
+    theme_color  = string
+    twitter_user = string
+  })
+
+  description = "Object of Website Configuration Data."
+  default = {
+    theme_color  = "#282433"
+    twitter_user = "wrklds"
+  }
 }
