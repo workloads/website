@@ -1,9 +1,9 @@
 # This is a Terraform-managed file; manual changes will be overwritten.
-# see https://github.com/workloads/github-organization/blob/main/templates/workflows/terraform.tftpl.yml
+# see https://github.com/workloads/github-organization/blob/main/templates/workflows/hugo.tftpl.yml
 
 ---
 
-name: "Code Quality: Terraform"
+name: "Deployment: Hugo Website"
 
 # yamllint disable-line rule:truthy
 on:
@@ -22,7 +22,7 @@ jobs:
       group: "${{ github.workflow }}-${{ github.ref }}"
       cancel-in-progress: true
 
-    name: Terraform
+    name: Hugo
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -33,22 +33,18 @@ jobs:
         with:
           fetch-depth: 1
 
-      # see https://github.com/hashicorp/setup-terraform/releases/tag/v3.0.0
-      - name: Set up Terraform
-        uses: "hashicorp/setup-terraform@a1502cd9e758c50496cc9ac5308c4843bcd56d36" # ref: `tags/v3.0.0`
+      # see https://github.com/peaceiris/actions-hugo/releases/tag/v2.6.0
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@16361eb4acea8698b220b76c0d4e84e1fd22c61d # ref `tags/v2.6.0`
         with:
-          terraform_wrapper: false
-          terraform_version: "${{ vars.TERRAFORM_VERSION }}"
+          # see `hugo.toml` for an acceptable version string
+          hugo-version: '0.120.0'
 
-      - name: Initialize Terraform
-        run: terraform init
-        env:
-          working-dir: "./"
-
-      - name: Format Terraform Code
-        run: terraform fmt -check -recursive
-        env:
-          working-dir: "./"
+      # see https://github.com/peaceiris/actions-hugo/releases/tag/v2.6.0
+      - name: Display Hugo Config
+        run: |
+          hugo \
+            config
 
   workflow-inactive:
     # only run if workflows are disabled

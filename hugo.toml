@@ -1,0 +1,222 @@
+# see https://gohugo.io/getting-started/configuration/#all-configuration-settings
+# for an overview of all configuration options
+
+baseURL = 'https://workloads.io/'
+
+# omit building anything that shouldn't be published
+buildDrafts  = false
+buildExpired = false
+buildFuture  = false
+
+cleanDestinationDir = true
+
+defaultContentLanguage = 'en'
+
+disableAliases             = true
+disableHugoGeneratorInject = true
+disableKinds               = ['taxonomy']
+disableLiveReload          = false
+disablePathToLower         = false
+
+enableEmoji                          = false
+enableGitInfo                        = false
+enableInlineShortcodes               = false
+enableMissingTranslationPlaceholders = true
+enableRobotsTXT                      = true
+
+# see https://gohugo.io/getting-started/configuration/#configure-front-matter
+frontmatter = 'TOML'
+
+# see https://gohugo.io/getting-started/configuration/#languagecode
+# and https://gohugo.io/content-management/multilingual/#configure-languages
+languageCode = 'en-us'
+
+publishDir = 'public'
+
+removePathAccents = true
+
+timeout = '60s'
+
+timezone = 'Europe/Amsterdam'
+
+title = 'Workloads'
+
+titleCaseStyle = 'ap'
+
+uglyURLs = false
+
+watch = true
+
+# see https://gohugo.io/hosting-and-deployment/hugo-deploy/
+[deployment]
+  [[deployment.targets]]
+    name = "local"
+    URL  = "file://./public"
+
+  [[deployment.targets]]
+    name = "live"
+    # see https://gocloud.dev/howto/blob/#s3
+    URL = "s3://<Bucket Name>?region=<AWS region>"
+    cloudFrontDistributionID = "<CloudFront Distribution ID>"
+
+# see https://gohugo.io/getting-started/configuration-markup/#goldmark
+[markup]
+  defaultMarkdownHandler = 'goldmark'
+
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+  [markup.highlight]
+    codeFences  = true
+    guessSyntax = true
+    noClasses   = false
+
+# items for main menu
+# see https://gohugo.io/content-management/menus/#define-in-site-configuration
+[menu]
+  [[menu.main]]
+    identifier = 'home'
+    name       = 'Home'
+    url        = '/'
+    weight     = 1
+
+  [[menu.main]]
+    identifier = 'about'
+    name       = 'About'
+    url        = '/about'
+    weight     = 2
+
+[module]
+  # see https://gohugo.io/hugo-modules/configuration/#module-configuration-hugoversion
+  [module.hugoVersion]
+    extended = false
+    min      = '0.120.0'
+
+  # see https://gohugo.io/hugo-modules/configuration/#module-configuration-imports
+  [[module.imports]]
+    disable       = false
+    ignoreConfig  = false
+    ignoreImports = false
+    path          = 'hugo-theme-workloads-v1'
+
+[outputs]
+  home = ['HTML', 'JSON', 'RSS']
+
+[params]
+  description = 'TODO'
+  hero_image  = '/images/01.jpg'
+  logo_image  = '/images/logo.png'
+  theme_color = '#282433'
+
+  [params.authors]
+    [params.authors.atodorov]
+      name     = 'Adrian Todorov'
+      avatar   = '/images/authors/ksatirli.jpg'
+      bio      = 'TODO'
+      github   = 'sofixa'
+      linkedin = 'TODO'
+      twitter  = 'TODO'
+
+    [params.authors.ksatirli]
+      name     = 'Kerim Satirli'
+      avatar   = '/images/authors/ksatirli.jpg'
+      bio      = 'Kerim is a senior developer advocate at HashiCorp, where he coaches operators and developers on sustainable infrastructure and orchestration workflows.'
+      github   = 'ksatirli'
+      linkedin = 'kerimsatirli'
+      twitter  = 'ksatirli'
+
+  [params.fontawesome]
+    identifier = 'f8764d0198'
+
+  [[params.social]]
+    icon = 'fa-brands fa-github'
+    name = 'GitHub'
+    link = 'https://github.com/workloads'
+
+  [[params.social]]
+    icon = 'fa-brands fa-x-twitter'
+    name = 'X'
+    link = 'https://x.com/wrklds'
+
+#  [[params.social]]
+#    icon = 'fa-brands fa-twitch'
+#    name = 'Twitch'
+#    link = 'https://twitch.tv/workloads'
+
+  [[params.social]]
+    icon = 'fa-brands fa-youtube'
+    name = 'YouTube'
+    link = 'https://youtube.com/c/workloads'
+
+#  [[params.social]]
+#    icon = 'fa-brands fa-instagram'
+#    name = 'Instagram'
+#    link = 'https://instagram.com/wrklds'
+
+  [params.twitter]
+    handle = 'wrklds'
+
+# see https://gohugo.io/content-management/urls/#permalinks
+[permalinks]
+  articles = '/article/:title/'
+
+# see https://gohugo.io/about/hugo-and-gdpr/
+[privacy]
+  [privacy.disqus]
+    disable = true
+
+  [privacy.googleAnalytics]
+    anonymizeIP       = true
+    disable           = false
+    respectDoNotTrack = true
+    useSessionStorage = true
+
+  [privacy.instagram]
+    disable = true
+    simple  = true
+
+  [privacy.twitter]
+    disable   = false
+    enableDNT = false
+    simple    = false
+
+  [privacy.vimeo]
+    disable = true
+
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true
+
+# see https://gohugo.io/getting-started/configuration/#_404-server-error-page
+[[redirects]]
+  from   = '/**'
+  status = 404
+  to     = '/404.html'
+
+[related]
+  includeNewer = true
+  threshold    = 85
+  toLower      = false
+
+  [[related.indices]]
+    name   = 'tags'
+    weight = 80
+
+  [[related.indices]]
+    name   = 'keywords'
+    weight = 40
+
+  [[related.indices]]
+    name   = 'date'
+    weight = 10
+
+[services]
+  # see https://gohugo.io/templates/internal/#google-analytics
+  [services.googleAnalytics]
+    ID = 'G-LG21X9V9SW'
+
+# see https://gohugo.io/templates/sitemap-template/#configuration
+[sitemap]
+  changefreq = 'weekly'
+  priority   = 0.8
