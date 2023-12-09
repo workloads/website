@@ -96,9 +96,12 @@ watch = true
   # see https://gohugo.io/hugo-modules/configuration/#module-configuration-imports
   [[module.imports]]
     disable       = false
-    ignoreConfig  = false
+
+    # only load root-level config, not module specific overrides
+    ignoreConfig  = true
     ignoreImports = false
-    path          = 'hugo-theme-workloads-v1'
+    noVendor      = false
+    path          = 'github.com/workloads/hugo-theme-workloads'
 
 [outputs]
   home = ['HTML', 'JSON', 'RSS']

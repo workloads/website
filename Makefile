@@ -75,7 +75,7 @@ endif
 
 	$(if $(target),,$(call missing_argument,target=<target>))
 
-	echo $(BINARY_HUGO) \
+	$(BINARY_HUGO) \
 		deploy \
 			$(cli_args) \
 			--target=$(target) \

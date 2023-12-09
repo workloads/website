@@ -1,13 +1,16 @@
 # This is a Terraform-managed file; manual changes will be overwritten.
-# see https://github.com/workloads/github-organization/blob/main/templates/workflows/hugo.tftpl.yml
+# see https://github.com/workloads/github-organization/blob/main/templates/workflows/hugo-preview.tftpl.yml
 
 ---
 
-name: "Deployment: Hugo Website"
+name: "Deployment: Website Preview"
 
 # yamllint disable-line rule:truthy
 on:
   push:
+    branches:
+      - '!main' # `main` should not trigger preview deployments
+      - '**' # all other branches should trigger preview deployments
 
 # see https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions
 permissions: read-all
@@ -22,7 +25,7 @@ jobs:
       group: "${{ github.workflow }}-${{ github.ref }}"
       cancel-in-progress: true
 
-    name: Hugo
+    name: Hugo (Preview)
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -37,14 +40,31 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@16361eb4acea8698b220b76c0d4e84e1fd22c61d # ref `tags/v2.6.0`
         with:
-          # see `hugo.toml` for an acceptable version string
-          hugo-version: '0.120.0'
+          # `HUGO_VERSION` is a GitHub Actions Organization variable
+          # see https://github.com/organizations/workloads/settings/variables/actions
+          hugo-version: "${{ vars.HUGO_VERSION }}"
 
-      # see https://github.com/peaceiris/actions-hugo/releases/tag/v2.6.0
       - name: Display Hugo Config
         run: |
           hugo \
             config
+
+      - name: Render Website (Preview)
+        run: |
+          hugo \
+            --config="hugo.toml" \
+            --buildDrafts \
+            --buildFuture
+
+      - name: Deploy Website (Preview)
+        run: |
+          hugo \
+            deploy \
+            --config="hugo.toml,hugo-deploy.toml" \
+            --target="preview" \
+            --buildDrafts \
+            --buildFuture
+
 
   workflow-inactive:
     # only run if workflows are disabled
