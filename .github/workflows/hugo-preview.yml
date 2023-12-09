@@ -44,17 +44,18 @@ jobs:
           # see https://github.com/organizations/workloads/settings/variables/actions
           hugo-version: "${{ vars.HUGO_VERSION }}"
 
-      - name: Display Hugo Config
-        run: |
-          hugo \
-            config
-
+      # see https://gohugo.io/hugo-modules/use-modules/#update-all-modules
       - name: Get Hugo Modules
         run: |
           hugo \
             mod \
               get \
                 -u
+
+      - name: Display Hugo Config
+        run: |
+          hugo \
+            config
 
       - name: Render Website (Preview)
         run: |
