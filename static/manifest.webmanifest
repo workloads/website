@@ -1,0 +1,20 @@
+{
+  "name": "{{ .Site.Title }}",
+  "background_color": "{{ .Site.Params.theme_color }}",
+  "description": "{{ .Site.Params.description }}",
+  "display": "browser",
+  "icons": [
+    {
+      "sizes": "192x192",
+      "src": "https://assets.workloads.io/website/icon_192.png",
+      "type": "image/png"
+    }, {
+      "sizes": "512x512",
+      "src": "https://assets.workloads.io/website/icon_512.png",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "portrait-primary",
+  "short_name": "{{ .Site.Title }}",
+  "start_url": "{{ .Site.BaseURL }}",
+}
