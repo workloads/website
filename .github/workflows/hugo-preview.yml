@@ -38,7 +38,7 @@ jobs:
 
       # see https://github.com/peaceiris/actions-hugo/releases/tag/v2.6.0
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@16361eb4acea8698b220b76c0d4e84e1fd22c61d # ref `tags/v2.6.0`
+        uses: peaceiris/actions-hugo@8a6a8d5fd9fbc30f0d3ef0b5d8c7c652fa07c4bb # ref `tags/v2.6.0`
         with:
           # `HUGO_VERSION` is a GitHub Actions Organization variable
           # see https://github.com/organizations/workloads/settings/variables/actions
