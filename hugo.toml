@@ -47,18 +47,6 @@ uglyURLs = false
 
 watch = true
 
-# see https://gohugo.io/hosting-and-deployment/hugo-deploy/
-[deployment]
-  [[deployment.targets]]
-    name = "local"
-    URL  = "file://./public"
-
-  [[deployment.targets]]
-    name = "live"
-    # see https://gocloud.dev/howto/blob/#s3
-    URL = "s3://<Bucket Name>?region=<AWS region>"
-    cloudFrontDistributionID = "<CloudFront Distribution ID>"
-
 # see https://gohugo.io/getting-started/configuration-markup/#goldmark
 [markup]
   defaultMarkdownHandler = 'goldmark'
