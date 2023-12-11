@@ -1,6 +1,6 @@
-# Terraform Cloud Workspace `website`
+# Hugo Website: `workloads.io`
 
-> This directory manages Website Configuration for [@workloads](https://github.com/workloads).
+> This directory manages the Website for [@workloads](https://github.com/workloads).
 
 ## Table of Contents
 
@@ -17,42 +17,30 @@
 
 ## Requirements
 
-- HashiCorp Terraform `1.5.x` or [newer](https://developer.hashicorp.com/packer/downloads)
-
-Optional, and only needed for documentation generation:
-
-- `terraform-docs` `0.16.0` or [newer](https://terraform-docs.io/user-guide/installation/)
+- Hugo `0.121.x` or [newer](https://developer.hashicorp.com/packer/downloads)
 
 ## Usage
 
-This repository uses a standard Terraform workflow (`init`, `plan`, `apply`).
+This repository provides a workflow that is wrapped through a [Makefile](./Makefile).
 
-For more information, including detailed usage guidelines, see the [Terraform documentation](https://developer.hashicorp.com/terraform/cli/commands).
+Running `make` without commands will print out the following help information:
 
-<!-- BEGIN_TF_DOCS -->
-### Inputs
+```text
+🌐 WEBSITE
 
-| Name | Description | Type | Required |
-|------|-------------|------|:--------:|
-| github_token | This is the GitHub Token. | `string` | yes |
-| management_region_aws | AWS-specific `Management` Region Identifier. | `string` | yes |
-| domain | Website Domain. | `string` | no |
-| fontawesome_identifier | Font Awesome Kit Identifier. | `string` | no |
-| github_owner | This is the target GitHub Organization. | `string` | no |
-| subdomain | Website Subdomain. | `string` | no |
-| website | Object of Website Configuration Data. | <pre>object({<br>    theme_color  = string<br>    twitter_user = string<br>  })</pre> | no |
+Target          Description                                       Usage
+build           build website files                               `make build`
+config          display configuration for website                 `make config`
+content         create new content                                `make content title="<title>"`
+server          start Hugo server                                 `make server`
+deploy          deploy new and updated content                    `make deploy target="<target>"`
+trust           establish trust for generated TLS certificates    `make trust`
+help            display a list of Make Targets                    `make help`
+_listincludes   list all included Makefiles and *.mk files        `make _listincludes`
+_selfcheck      lint Makefile                                     `make _selfcheck`
+```
 
-### Outputs
-
-| Name | Description |
-|------|-------------|
-| aws_cli_commands | AWS CLI Command for CloudFront operations. |
-| aws_cloudfront_aliases | Exported Attributes for `module.website.aws_cloudfront_distribution.aliases`. |
-| aws_cloudfront_domain_name | Exported Attribute for `module.website.aws_cloudfront_distribution.domain_name`. |
-| aws_console_urls | AWS Console URLs. |
-| aws_s3_bucket | Exported Attribute for `module.website.aws_s3_bucket`. |
-| github_repositories_list | Exported List of Repositories of the `github_repositories.main` Data Source. |
-<!-- END_TF_DOCS -->
+> All workflows _may_ be executed manually, though this is not advisable. See the [Makefile](./Makefile) for more information.
 
 ## Author Information
 
