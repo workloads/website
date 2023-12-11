@@ -1,11 +1,15 @@
-  [[deployment.targets]]
-    name = "preview"
-    # see https://gocloud.dev/howto/blob/#s3
-    URL = "s3://workloadsio-site-preview-1f1j?region=us-west-2"
-    cloudFrontDistributionID = "<CloudFront Distribution ID>"
+# This is a Terraform-managed file; manual changes will be overwritten.
+# see https://github.com/workloads/website-deployment/blob/main/templates/hugo-deploy.tftpl.toml
 
-  [[deployment.targets]]
-    name = "live"
-    # see https://gocloud.dev/howto/blob/#s3
-    URL = "s3://workloadsio-site-preview-1f1j?region=us-west-2"
-    cloudFrontDistributionID = "E2ATAM9S3I0AAR"
+# deployment-specific configuration, for all other config see `hugo.toml`
+# and https://gohugo.io/hosting-and-deployment/hugo-deploy/
+
+[[deployment.targets]]
+  name                     = "preview"
+  URL                      = "s3://workloadsio-preview-site-1f1j?region=us-west-2"
+  cloudFrontDistributionID = "EZB07WTY6BI7U"
+
+[[deployment.targets]]
+  name                     = "live"
+  URL                      = "s3://workloadsio-site-1f1j?region=us-west-2"
+  cloudFrontDistributionID = "E2ATAM9S3I0AAR"
