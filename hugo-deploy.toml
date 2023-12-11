@@ -1,11 +1,3 @@
-# deployment-specific configuration, for all other config see `hugo.toml`
-
-# see https://gohugo.io/hosting-and-deployment/hugo-deploy/
-[deployment]
-  [[deployment.targets]]
-    name = "local"
-    URL  = "file://./public"
-
   [[deployment.targets]]
     name = "preview"
     # see https://gocloud.dev/howto/blob/#s3

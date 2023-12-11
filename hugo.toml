@@ -47,6 +47,14 @@ uglyURLs = false
 
 watch = true
 
+# see https://gohugo.io/hosting-and-deployment/hugo-deploy/
+[deployment]
+  [[deployment.targets]]
+  name = "local"
+  URL  = "file://./public"
+
+  # for other deployment targets, see `hugo-deploy.toml`
+
 # see https://gohugo.io/getting-started/configuration-markup/#goldmark
 [markup]
   defaultMarkdownHandler = 'goldmark'
