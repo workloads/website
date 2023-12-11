@@ -70,10 +70,7 @@ jobs:
           hugo \
             deploy \
             --config="hugo.toml,hugo-deploy.toml" \
-            --target="preview" \
-            --buildDrafts \
-            --buildFuture
-
+            --target="preview"
 
   workflow-inactive:
     # only run if workflows are disabled
