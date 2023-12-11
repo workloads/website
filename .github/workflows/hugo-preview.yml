@@ -43,6 +43,7 @@ jobs:
           # `HUGO_VERSION` is a GitHub Actions Organization variable
           # see https://github.com/organizations/workloads/settings/variables/actions
           hugo-version: "${{ vars.HUGO_VERSION }}"
+          extended: true
 
       # see https://gohugo.io/hugo-modules/use-modules/#update-all-modules
       - name: Get Hugo Modules
