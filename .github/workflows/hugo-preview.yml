@@ -36,9 +36,16 @@ jobs:
         with:
           fetch-depth: 1
 
+      # see https://github.com/aws-actions/configure-aws-credentials/releases/tag/v4.0.1
+      - name: Configure AWS Credentials
+        uses: "aws-actions/configure-aws-credentials@1c6460a84bd4d87ce261cddada66cd7881aea06b" # ref `tags/v4.0.1`
+        with:
+          aws-access-key-id: "${{ secrets.AWS_ACCESS_KEY_ID }}"
+          aws-secret-access-key: "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+
       # see https://github.com/peaceiris/actions-hugo/releases/tag/v2.6.0
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@8a6a8d5fd9fbc30f0d3ef0b5d8c7c652fa07c4bb # ref `tags/v2.6.0`
+        uses: "peaceiris/actions-hugo@8a6a8d5fd9fbc30f0d3ef0b5d8c7c652fa07c4bb" # ref `tags/v2.6.0`
         with:
           # `HUGO_VERSION` is a GitHub Actions Organization variable
           # see https://github.com/organizations/workloads/settings/variables/actions
