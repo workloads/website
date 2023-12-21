@@ -9,6 +9,8 @@
   * [Table of Contents](#table-of-contents)
   * [Requirements](#requirements)
   * [Usage](#usage)
+  * [Notes](#notes)
+    * [Sensitive Data](#sensitive-data)
   * [Contributors](#contributors)
   * [License](#license)
 <!-- TOC -->
@@ -39,6 +41,12 @@ _selfcheck      lint Makefile                                     `make _selfche
 ```
 
 > All workflows _may_ be executed manually, though this is not advisable. See the [Makefile](./Makefile) for more information.
+
+## Notes
+
+### Sensitive Data
+
+Terraform state may contain [sensitive data](https://developer.hashicorp.com/terraform/language/state/sensitive-data). This workspace uses [Terraform Cloud](https://developer.hashicorp.com/terraform/cloud-docs) to safely store state, and encrypt the data at rest.
 
 ## Contributors
 
