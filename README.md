@@ -1,17 +1,15 @@
 # Hugo Website: `workloads.io`
 
-> This directory manages the Website for [@workloads](https://github.com/workloads).
+> This repository manages the website for [@workloads](https://github.com/workloads).
 
 ## Table of Contents
 
 <!-- TOC -->
-* [Terraform Cloud Workspace `website`](#terraform-cloud-workspace-website)
+* [Hugo Website: `workloads.io`](#hugo-website-workloadsio)
   * [Table of Contents](#table-of-contents)
   * [Requirements](#requirements)
   * [Usage](#usage)
-    * [Inputs](#inputs)
-    * [Outputs](#outputs)
-  * [Author Information](#author-information)
+  * [Contributors](#contributors)
   * [License](#license)
 <!-- TOC -->
 
