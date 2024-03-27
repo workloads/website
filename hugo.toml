@@ -91,13 +91,14 @@ watch = true
 
   # see https://gohugo.io/hugo-modules/configuration/#module-configuration-imports
   [[module.imports]]
-    disable       = false
+    disable = false
 
     # only load root-level config, not module specific overrides
     ignoreConfig  = true
     ignoreImports = false
     noVendor      = false
-    path          = 'github.com/workloads/hugo-theme-workloads'
+    #path          = 'github.com/workloads/hugo-theme-workloads'
+    path          = '../../hugo-theme-workloads'
 
 [outputs]
   home = ['HTML', 'JSON', 'RSS']
@@ -111,11 +112,11 @@ watch = true
   [params.authors]
     [params.authors.atodorov]
       name     = 'Adrian Todorov'
-      avatar   = '/images/authors/ksatirli.jpg'
+      avatar   = '/images/authors/atodorov.jpg'
       bio      = 'TODO'
       github   = 'sofixa'
-      linkedin = 'TODO'
-      twitter  = 'TODO'
+      linkedin = 'adrianttodorov'
+      twitter  = 'sofixa'
 
     [params.authors.ksatirli]
       name     = 'Kerim Satirli'
